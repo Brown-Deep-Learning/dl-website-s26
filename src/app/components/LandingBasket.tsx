@@ -148,13 +148,18 @@ const MainTitleBox = styled.div`
   text-align: center;
   margin-bottom: 2rem;
   z-index: 20;
-  
   transform: rotate(-2deg);
+  
+  @media (max-width: 768px) {
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 1rem;
+    border-width: 2px;
+  }
 `;
 
 const LogoText = styled.h1`
   font-family: var(--font-retro);
-  font-size: clamp(3rem, 7vw, 6rem);
+  font-size: clamp(2rem, 8vw, 6rem);
   color: var(--cherry-red);
   margin: 0;
   line-height: 1.1;
@@ -170,6 +175,19 @@ const LogoText = styled.h1`
     letter-spacing: 2px;
     margin-top: 0.5rem;
     text-shadow: 1px 1px 0 #000;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: clamp(1.5rem, 10vw, 3rem);
+    text-shadow: 
+      1px 1px 0px #fff,
+      2px 2px 0px #000;
+    
+    span {
+      font-size: 0.35em;
+      letter-spacing: 1px;
+      margin-top: 0.25rem;
+    }
   }
 `;
 
@@ -222,6 +240,19 @@ const SignBoard = styled.div`
   }
   &::before { left: 1rem; }
   &::after { right: 1rem; }
+  
+  @media (max-width: 768px) {
+    border-width: 5px;
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
+    min-width: 240px;
+    
+    &::before, &::after {
+      font-size: 1.25rem;
+    }
+    &::before { left: 0.5rem; }
+    &::after { right: 0.5rem; }
+  }
 `;
 
 const SignInner = styled.div`
@@ -231,15 +262,20 @@ const SignInner = styled.div`
   background: radial-gradient(circle, #333 0%, #000 100%);
   width: 100%;
   text-align: center;
+  
+  @media (max-width: 768px) {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+  }
 `;
 
 const DinerText = styled.h2`
   position: relative;
   font-family: var(--font-retro);
-  font-size: 4rem;
+  font-size: clamp(1.5rem, 6vw, 4rem);
   color: #fff;
   text-transform: uppercase;
-  letter-spacing: 8px;
+  letter-spacing: clamp(2px, 1.5vw, 8px);
   margin: 0;
   text-shadow: 
     2px 2px 0px rgba(255, 255, 255, 0.3),
@@ -279,7 +315,13 @@ const DinerText = styled.h2`
   }
   
   @media (max-width: 768px) {
-    font-size: 2.5rem;
+    font-size: clamp(1.25rem, 5.5vw, 2.5rem);
+    letter-spacing: clamp(1px, 1vw, 4px);
+    text-shadow: 
+      1px 1px 0px rgba(255, 255, 255, 0.3),
+      0 0 3px var(--neon-blue),
+      0 0 6px var(--neon-blue),
+      0 0 12px var(--neon-blue);
   }
 `;
 
@@ -308,9 +350,10 @@ const ArrowContainer = styled.div`
   .bulb:nth-child(3n) { animation-delay: 0.2s; }
 
   @media (max-width: 768px) {
-    right: -40px;
-    width: 100px;
-    height: 150px;
+    top: -30px;
+    right: -30px;
+    width: 80px;
+    height: 120px;
   }
 `;
 
@@ -321,13 +364,20 @@ const ClickToEnterPlaque = styled.div`
   padding: 1.5rem 1.5rem 0.5rem 1.5rem; /* Increase top padding */
   border-radius: 0 0 15px 15px;
   font-family: var(--font-retro);
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
   border: 4px solid var(--chrome-silver);
   border-top: none;
   box-shadow: 0 10px 20px rgba(0,0,0,0.4);
   z-index: 5;
   transform-origin: top center;
   animation: ${swing} 3s ease-in-out infinite alternate;
+  
+  @media (max-width: 768px) {
+    margin-top: -15px;
+    padding: 1rem 1rem 0.5rem 1rem;
+    border-width: 3px;
+    border-radius: 0 0 10px 10px;
+  }
 `;
 
 const LandingDiner = () => {

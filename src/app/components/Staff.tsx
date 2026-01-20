@@ -228,6 +228,7 @@ const ContactTicket = styled.div`
   transform: rotate(-2deg);
   position: relative;
   font-family: 'Courier New', monospace;
+  z-index: 5; /* Lower than VintageSign's z-index: 10 */
 
   /* Jagged top/bottom for ticket look */
   background-image: 
@@ -260,6 +261,27 @@ const ContactTicket = styled.div`
     padding-bottom: 1rem;
     margin-bottom: 1.5rem;
   }
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    max-width: 90%;
+    transform: rotate(-1deg);
+    
+    h3 {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1rem;
+    margin-bottom: 3rem;
+    
+    h3 {
+      font-size: 1.2rem;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1rem;
+    }
+  }
 `;
 
 const ContactItem = styled.div`
@@ -273,6 +295,7 @@ const ContactItem = styled.div`
   
   svg {
     color: var(--cherry-red);
+    flex-shrink: 0;
   }
   
   a {
@@ -280,10 +303,30 @@ const ContactItem = styled.div`
     text-decoration: none; 
     border-bottom: 1px solid var(--cherry-red);
     transition: all 0.2s;
+    word-break: break-word;
     
     &:hover { 
       color: var(--cherry-red);
       background: rgba(220, 10, 60, 0.1);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    text-align: center;
+    
+    a {
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+    
+    a {
+      font-size: 0.75rem;
     }
   }
 `;

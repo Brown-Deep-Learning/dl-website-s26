@@ -1,9 +1,9 @@
 export const staffData = {
   professor: {
-    name: "Eric Ewing",
-    email: "eric_ewing@brown.edu",
-    image: "/images/profiles/eric.png",
-    friedImage: "/images/profiles/eric.png", // TODO: Replace with fried food version
+    name: "Randall Balestriero",
+    email: "randall_balestriero@brown.edu",
+    image: "/images/profiles/randall.jpg",
+    friedImage: "/images/profiles/randall.jpg", // TODO: Replace with fried food version
     description: "The head chef of this deep learning kitchen.",
   },
   emails: {
@@ -17,6 +17,18 @@ export const staffData = {
       friedImage: "/images/profiles/armaan.jpg", // TODO: Replace with fried food version
       description: "Cooking up neural networks since 2024.",
     },
+    {
+      name: "Aryan Singh",
+      image: "/images/profiles/aryan.jpg",
+      friedImage: "/images/profiles/aryan.jpg", // TODO: Replace with fried food version
+      description: "Cooking up neural networks since 2024.",
+    },
+    {
+      name: "Hongyang Du",
+      image: "/images/profiles/hongyang.jpg",
+      friedImage: "/images/profiles/hongyang.jpg", // TODO: Replace with fried food version
+      description: "Cooking up neural networks since 2024.",
+    }
   ],
   utas: [
     {
@@ -26,39 +38,39 @@ export const staffData = {
       description: "Crispy gradients are my specialty.",
     },
     {
-      name: "Narek Harutyunyan",
-      image: "/images/profiles/narek.png",
-      friedImage: "/images/profiles/narek.png", // TODO: Replace with fried food version
+      name: "Duru Husyeni",
+      image: "/images/profiles/duru.jpg",
+      friedImage: "/images/profiles/duru.jpg", // TODO: Replace with fried food version
       description: "Master of the deep fried descent.",
     },
     {
-      name: "Sreedevi Prasad",
-      image: "/images/profiles/sree.jpg",
-      friedImage: "/images/profiles/sree.jpg", // TODO: Replace with fried food version
+      name: "Jason Lin",
+      image: "/images/profiles/jason.jpg",
+      friedImage: "/images/profiles/jason.jpg", // TODO: Replace with fried food version
       description: "Serving hot batches of tensors.",
     },
     {
-      name: "Maria Wang",
-      image: "/images/profiles/maria.jpeg",
-      friedImage: "/images/profiles/maria.jpeg", // TODO: Replace with fried food version
+      name: "Daniel Zhu",
+      image: "/images/profiles/daniel.jpg",
+      friedImage: "/images/profiles/daniel.jpg", // TODO: Replace with fried food version
       description: "Seasoning models with extra bias.",
     },
     {
-      name: "Sophia Li",
-      image: "/images/profiles/soph.png",
-      friedImage: "/images/profiles/soph.png", // TODO: Replace with fried food version
+      name: "Bumjin Joo",
+      image: "/images/profiles/bumjin.jpg",
+      friedImage: "/images/profiles/bumjin.jpg", // TODO: Replace with fried food version
       description: "Frying up features layer by layer.",
     },
     {
-      name: "Jacob Hirschhorn",
-      image: "/images/profiles/jacob.jpg",
-      friedImage: "/images/profiles/jacob.jpg", // TODO: Replace with fried food version
+      name: "Peter Popescu",
+      image: "/images/profiles/peter.jpg",
+      friedImage: "/images/profiles/peter.jpg", // TODO: Replace with fried food version
       description: "Extra crispy loss functions only.",
     },
     {
-      name: "Matthew Prenovitz",
-      image: "/images/profiles/matthew.jpg",
-      friedImage: "/images/profiles/matthew.jpg", // TODO: Replace with fried food version
+      name: "Devesh Kumar",
+      image: "/images/profiles/devesh.jpg",
+      friedImage: "/images/profiles/devesh.jpg", // TODO: Replace with fried food version
       description: "Grilling weights until they converge.",
     },
   ],

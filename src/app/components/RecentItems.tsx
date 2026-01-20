@@ -20,13 +20,25 @@ function getMaxInDate(assignment: Assignment): number {
 
 const getMostRecentLecture = () => {
   const allLectures = lectureGroups.flatMap((group) => group.lectures);
-  // Filter or sort by date
+  // Filter lectures that have at least one link (slides or recording)
   const lecturesWithLinks = allLectures.filter(
     (lecture) => lecture.slidesLink || lecture.recordingLink
   );
-  return lecturesWithLinks.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  )[0];
+  
+  // Filter lectures that have valid dates
+  const lecturesWithDates = lecturesWithLinks.filter(
+    (lecture) => lecture.date && lecture.date.trim() !== ""
+  );
+  
+  // If we have lectures with dates, sort by date and return the most recent
+  if (lecturesWithDates.length > 0) {
+    return lecturesWithDates.sort(
+      (a, b) => new Date(b.date!).getTime() - new Date(a.date!).getTime()
+    )[0];
+  }
+  
+  // Otherwise, just return the first lecture with links (no date sorting)
+  return lecturesWithLinks[0];
 };
 
 const getMostRecentAssignment = () => {
@@ -63,8 +75,12 @@ const RecentItems = () => {
           <h3 className={styles.title}>Most Recent Lecture</h3>
           {recentLecture ? (
             <div className={styles.itemContent}>
-              <span className={styles.itemTitle}>{recentLecture.title}</span>
-              <span className={styles.itemDate}>{recentLecture.date}</span>
+            <span className={styles.itemTitle}>{recentLecture.title}</span>
+            <span className={styles.itemDate}>
+              {recentLecture.date && recentLecture.date.trim() !== ""
+                ? recentLecture.date
+                : "Date TBA"}
+            </span>
               <div className={styles.links}>
                 {recentLecture.slidesLink && (
                   <a
@@ -112,7 +128,11 @@ const RecentItems = () => {
         {recentLecture ? (
           <div className={styles.itemContent}>
             <span className={styles.itemTitle}>{recentLecture.title}</span>
-            <span className={styles.itemDate}>{recentLecture.date}</span>
+            <span className={styles.itemDate}>
+              {recentLecture.date && recentLecture.date.trim() !== ""
+                ? recentLecture.date
+                : "Date TBA"}
+            </span>
             <div className={styles.links}>
               {recentLecture.slidesLink && (
                 <a

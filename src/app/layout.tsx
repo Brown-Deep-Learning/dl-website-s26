@@ -37,6 +37,9 @@ export const viewport: Viewport = {
 export const metadata = {
   title: "Deep Learning Course | CSCI 1470",
   description: "Welcome to the Deep Learning Diner - CSCI 1470 @ Brown University",
+  icons: {
+    icon: "/images/icons/logo.png",
+  },
 };
 
 import StyledComponentsRegistry from "../lib/registry";

@@ -148,19 +148,19 @@ export const lectureGroups: LectureGroup[] = [
         recordingLink: ""
       },
       {
-        id: 21,
+        id: 22,
         title: "PPO",
         slidesLink: "",
         recordingLink: ""
       },
       {
-        id: 21,
+        id: 23,
         title: "GRPO and LLMs",
         slidesLink: "",
         recordingLink: ""
       },
       {
-        id: 21,
+        id: 24,
         title: "Self-Supervised Learning",
         slidesLink: "",
         recordingLink: ""
@@ -171,13 +171,13 @@ export const lectureGroups: LectureGroup[] = [
     title: "Weeks 12-13: Looking Forward",
     lectures: [
       {
-        id: 22,
+        id: 25,
         title: "End-to-End Learning",
         slidesLink: "",
         recordingLink: ""
       },
       {
-        id: 23,
+        id: 26,
         title: "The Future of AI and Challenges Ahead",
         slidesLink: "",
         recordingLink: ""

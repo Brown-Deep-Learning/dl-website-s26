@@ -35,7 +35,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata = {
-  title: "Deep Learning Course | CSCI 1470",
+  title: "CSCI 1470 | Deep Learning",
   description: "Welcome to the Deep Learning Diner - CSCI 1470 @ Brown University",
   icons: {
     icon: "/images/icons/logo.png",
@@ -56,10 +56,6 @@ export default function RootLayout({
       className={`${inter.variable} ${oswald.variable} ${limelight.variable}`}
     >
       <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
-        />
       </head>
       <body>
         <StyledComponentsRegistry>

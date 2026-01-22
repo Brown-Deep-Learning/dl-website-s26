@@ -7,7 +7,7 @@ export const assignments = [
     // Since this only has a conceptual part, we put the due date in conceptual:
     conceptual: {
       title: "Conceptual",
-      link: "",
+      link: "https://hackmd.io/@browndls26/BJBMhFIB-e",
       inDate: "2026-02-05",
     },
   },

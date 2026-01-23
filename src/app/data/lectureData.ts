@@ -15,7 +15,7 @@ export const lectureGroups: LectureGroup[] = [
       {
         id: 2,
         title: "Machine Learning",
-        slidesLink: "",
+        slidesLink: "slides/lecture_2.pdf",
         recordingLink: ""
       },
       {

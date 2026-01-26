@@ -21,14 +21,14 @@ export const staffData = {
       name: "Aryan Singh",
       image: "/images/profiles/aryan.jpg",
       friedImage: "/images/profiles/aryan.jpg", // TODO: Replace with fried food version
-      description: "Cooking up neural networks since 2024.",
+      description: "Over seasoning models with hyperparameters",
     },
     {
       name: "Hongyang Du",
       image: "/images/profiles/hongyang.jpg",
-      friedImage: "/images/profiles/hongyang.jpg", // TODO: Replace with fried food version
-      description: "Crispy gradients are my specialty.",
-    }
+      friedImage: "/images/profiles/hongyang.jpg",
+      description: "Gradient is All You Need.",
+    },
   ],
   utas: [
     {

@@ -24,13 +24,13 @@ export const lectureGroups: LectureGroup[] = [
         title: "Perceptrons and MLPs",
         date: "2026-01-26",
         slidesLink: "slides/lecture_3.pdf",
-        recordingLink: ""
+        recordingLink: "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b8dc9ba8-a647-46c1-9fe7-b3de01318c62&start=439.85744"
       },
       {
         id: 4,
         title: "Optimization, Gradients, and Losses",
-        slidesLink: "",
-        recordingLink: ""
+        slidesLink: "slides/lecture_4.pdf",
+        recordingLink: "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b5612ccc-fd12-469c-82aa-b3d901596c53&start=437.40285"
       },
       {
         id: 5,

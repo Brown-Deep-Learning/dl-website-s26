@@ -17,7 +17,7 @@ export const assignments = [
     outDate: "2026-01-28",
     programming: {
       title: "Stencil Notebook",
-      link: "",
+      link: "https://colab.research.google.com/drive/120fYCqd-y_ceYXl5NY-zlE7izsEqrv4n?usp=sharing",
       inDate: "2026-02-05",
     },
   },

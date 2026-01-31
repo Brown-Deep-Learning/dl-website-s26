@@ -29,14 +29,16 @@ export const lectureGroups: LectureGroup[] = [
       {
         id: 4,
         title: "Optimization, Gradients, and Losses",
+        date: "2026-01-28",
         slidesLink: "slides/lecture_4.pdf",
         recordingLink: "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b5612ccc-fd12-469c-82aa-b3d901596c53&start=437.40285"
       },
       {
         id: 5,
         title: "Optimizers and Hyperparameter Tuning",
-        slidesLink: "",
-        recordingLink: ""
+        date: "2026-01-30",
+        slidesLink: "slides/lecture_5.pdf",
+        recordingLink: "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8494bb3d-8934-4bd1-8b7e-b3d901596c6b"
       },
       {
         id: 6,

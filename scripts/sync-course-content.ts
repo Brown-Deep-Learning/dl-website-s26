@@ -519,7 +519,8 @@ function execGit(command: string, options?: { silent?: boolean }): string {
       encoding: 'utf-8',
       stdio: options?.silent ? 'pipe' : 'inherit',
     });
-    return result.trim();
+    // When stdio is 'inherit', execSync returns null, so we return empty string
+    return result ? result.trim() : '';
   } catch (error: any) {
     throw new Error(`Git command failed: ${command}\n${error.message}`);
   }

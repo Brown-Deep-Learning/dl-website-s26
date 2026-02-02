@@ -13,39 +13,39 @@ export const lectureGroups: LectureGroup[] = [
         "recordingLink": ""
       },
       {
-        id: 2,
-        title: "Networks as Functions",
-        date: "2026-01-23",
-        slidesLink: "slides/lecture_2.pdf",
-        recordingLink: "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=47e43581-a637-47b3-821e-b3d901596bd6"
+        "id": 2,
+        "title": "Networks as Functions",
+        "date": "2026-01-23",
+        "slidesLink": "slides/lecture_2.pdf",
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=47e43581-a637-47b3-821e-b3d901596bd6"
       },
       {
-        id: 3,
-        title: "Featurization",
-        date: "2026-01-26",
-        slidesLink: "slides/lecture_3.pdf",
-        recordingLink: "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b8dc9ba8-a647-46c1-9fe7-b3de01318c62&start=439.85744"
+        "id": 3,
+        "title": "Featurization",
+        "date": "2026-01-26",
+        "slidesLink": "slides/lecture_3.pdf",
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b8dc9ba8-a647-46c1-9fe7-b3de01318c62&start=439.85744"
       },
       {
-        id: 4,
-        title: "Deeper Networks",
-        date: "2026-01-28",
-        slidesLink: "slides/lecture_4.pdf",
-        recordingLink: "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b5612ccc-fd12-469c-82aa-b3d901596c53&start=437.40285"
+        "id": 4,
+        "title": "Deeper Networks",
+        "date": "2026-01-28",
+        "slidesLink": "slides/lecture_4.pdf",
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b5612ccc-fd12-469c-82aa-b3d901596c53&start=437.40285"
       },
       {
-        id: 5,
-        title: "Gradients and AutoDiff",
-        date: "2026-01-30",
-        slidesLink: "slides/lecture_5.pdf",
-        recordingLink: "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8494bb3d-8934-4bd1-8b7e-b3d901596c6b"
+        "id": 5,
+        "title": "Gradients and AutoDiff",
+        "date": "2026-01-30",
+        "slidesLink": "slides/lecture_5.pdf",
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8494bb3d-8934-4bd1-8b7e-b3d901596c6b"
       },
       {
-        id: 6,
-        date: "2026-02-02",
-        title: "Hyperparameter Tuning",
-        slidesLink: "",
-        recordingLink: ""
+        "id": 6,
+        "date": "2026-02-02",
+        "title": "Hyperparameter Tuning",
+        "slidesLink": "",
+        "recordingLink": ""
       },
       {
         "id": 5,

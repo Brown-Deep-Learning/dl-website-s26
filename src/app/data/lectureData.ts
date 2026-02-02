@@ -35,22 +35,15 @@ export const lectureGroups: LectureGroup[] = [
       },
       {
         "id": 5,
-        "title": "Gradients and AutoDiff",
+        "title": "Gradients",
         "date": "2026-01-30",
         "slidesLink": "slides/lecture_5.pdf",
         "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8494bb3d-8934-4bd1-8b7e-b3d901596c6b"
       },
       {
-        "id": 5,
-        "title": "Gradients and AutoDiff",
-        "date": "2026-01-30",
-        "slidesLink": "slides/lecture_5.pdf",
-        "recordingLink": ""
-      },
-      {
         "id": 6,
         "date": "2026-02-02",
-        "title": "Hyperparameter Tuning",
+        "title": "AutoDiff and Hyperparameter Tuning",
         "slidesLink": "slides/lecture_6.pdf",
         "recordingLink": ""
       },

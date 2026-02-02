@@ -152,7 +152,7 @@ const Lectures = () => {
                   
                   <ItemInfo>
                     <ItemName>
-                      {lecture.title}
+                      {lecture.title || "To Be Announced"}
                       {i % 2 === 0 && <span style={{marginLeft: '8px'}}>🍳</span>}
                     </ItemName>
                   </ItemInfo>

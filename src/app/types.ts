@@ -1,7 +1,7 @@
 // types.ts
 export interface Lecture {
   id: number;
-  title: string;
+  title?: string; // Optional - displays "To Be Announced" if not present
   date?: string; // Optional - can be filled in later
   slidesLink?: string;
   recordingLink?: string;

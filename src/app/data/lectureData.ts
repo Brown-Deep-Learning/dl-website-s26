@@ -51,7 +51,7 @@ export const lectureGroups: LectureGroup[] = [
         "id": 6,
         "date": "2026-02-02",
         "title": "Hyperparameter Tuning",
-        "slidesLink": "",
+        "slidesLink": "slides/lecture_6.pdf",
         "recordingLink": ""
       },
       {

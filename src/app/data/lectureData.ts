@@ -41,13 +41,6 @@ export const lectureGroups: LectureGroup[] = [
         "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8494bb3d-8934-4bd1-8b7e-b3d901596c6b"
       },
       {
-        "id": 6,
-        "date": "2026-02-02",
-        "title": "Hyperparameter Tuning",
-        "slidesLink": "",
-        "recordingLink": ""
-      },
-      {
         "id": 5,
         "title": "Gradients and AutoDiff",
         "date": "2026-01-30",

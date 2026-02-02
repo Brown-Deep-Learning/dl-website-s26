@@ -9,12 +9,12 @@
     "lint": "next lint",
     "export": "next build",
     "deploy": "npm run build && gh-pages -d out",
-    "sync": "ts-node scripts/sync-course-content.ts",
-    "sync:slides": "ts-node scripts/sync-course-content.ts --slides-only",
-    "sync:slides:push": "ts-node scripts/sync-course-content.ts --slides-only --push",
-    "debug-auth": "ts-node scripts/debug-auth.ts",
-    "panopto-auth": "ts-node scripts/panopto-oauth-setup.ts",
-    "diagnose-panopto": "ts-node scripts/diagnose-panopto-oauth.ts"
+    "sync": "tsx scripts/sync-course-content.ts",
+    "sync:slides": "tsx scripts/sync-course-content.ts --slides-only",
+    "sync:slides:push": "tsx scripts/sync-course-content.ts --slides-only --push",
+    "debug-auth": "tsx scripts/debug-auth.ts",
+    "panopto-auth": "tsx scripts/panopto-oauth-setup.ts",
+    "diagnose-panopto": "tsx scripts/diagnose-panopto-oauth.ts"
   },
   "dependencies": {
     "@tsparticles/engine": "^3.8.0",
@@ -48,7 +48,7 @@
     "open": "^10.0.3",
     "postcss": "^8.5.1",
     "tailwindcss": "^3.4.17",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.7.0",
     "typescript": "^5.7.3"
   }
 }

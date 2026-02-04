@@ -45,14 +45,14 @@ export const lectureGroups: LectureGroup[] = [
         "date": "2026-02-02",
         "title": "AutoDiff and Hyperparameter Tuning",
         "slidesLink": "slides/lecture_6.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=feb71d29-5062-4564-847c-b3d901596c7e"
       },
       {
         "id": 7,
         "date": "2026-02-04",
         "title": "Convolutions",
         "slidesLink": "",
-        "recordingLink": ""
+        "recordingLink": "https://drive.google.com/file/d/1r3m-ZqvHR0_0oSlAeABpeGm6u7QPZh7k/view?usp=sharing"
       },
       {
         "id": 8,

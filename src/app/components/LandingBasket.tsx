@@ -433,8 +433,8 @@ const LandingDiner = () => {
 
         <SignBoard>
           <SignInner>
-            <DinerText>THE DEEP FRIED</DinerText>
-            <DinerText>DL DINER</DinerText>
+            <DinerText>THE DL</DinerText>
+            <DinerText>DINER</DinerText>
           </SignInner>
           {/* Staggered oil droplets from corner */}
           <OilDroplet $delay={0} $right={6} />

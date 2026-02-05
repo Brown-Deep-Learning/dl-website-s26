@@ -12,6 +12,8 @@
     "sync": "tsx scripts/sync-course-content.ts",
     "sync:slides": "tsx scripts/sync-course-content.ts --slides-only",
     "sync:slides:push": "tsx scripts/sync-course-content.ts --slides-only --push",
+    "sync:recordings": "tsx scripts/sync-lecture-recordings.ts",
+    "sync:recordings:push": "tsx scripts/sync-lecture-recordings.ts --push",
     "debug-auth": "tsx scripts/debug-auth.ts",
     "panopto-auth": "tsx scripts/panopto-oauth-setup.ts",
     "diagnose-panopto": "tsx scripts/diagnose-panopto-oauth.ts"

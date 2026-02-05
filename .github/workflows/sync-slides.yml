@@ -1,9 +1,9 @@
 name: Sync Course Slides
 
 on:
-  # Schedule: Run at 11:00 AM EST (15:00 UTC) on Mon/Wed/Fri
+  # Schedule: Run at 10:00 AM EST (14:00 UTC) on Mon/Wed/Fri
   schedule:
-    - cron: '0 15 * * 1,3,5'  # Monday, Wednesday, Friday at 15:00 UTC (11:00 AM EST)
+    - cron: '0 14 * * 1,3,5'  # Monday, Wednesday, Friday at 14:00 UTC (10:00 AM EST)
 
   # Allow manual trigger
   workflow_dispatch:

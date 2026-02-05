@@ -51,7 +51,7 @@ export const lectureGroups: LectureGroup[] = [
         "id": 7,
         "date": "2026-02-04",
         "title": "Convolutions",
-        "slidesLink": "",
+        "slidesLink": "slides/lecture_7.pdf",
         "recordingLink": "https://drive.google.com/file/d/1r3m-ZqvHR0_0oSlAeABpeGm6u7QPZh7k/view?usp=sharing"
       },
       {

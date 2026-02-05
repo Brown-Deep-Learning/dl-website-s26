@@ -21,6 +21,43 @@ Now, obviously, we want to prioritize functionality over aesthetics, but the web
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Automated Content Sync
+
+The website features automated synchronization of lecture content from Google Drive:
+
+### Slides Sync (10 AM EST, Mon/Wed/Fri)
+- Automatically downloads lecture slide PDFs from Google Drive
+- Updates `slidesLink` in lectureData.ts
+- Workflow: `.github/workflows/sync-slides.yml`
+- Script: `scripts/sync-course-content.ts`
+
+### Recordings Sync (5 PM EST, Mon/Wed/Fri)
+- Reads the "Lecture Recordings" Google Sheet from the same Drive folder
+- Updates lecture names and recording links based on the sheet data
+- Only updates empty fields (won't overwrite existing data)
+- Workflow: `.github/workflows/sync-recordings.yml`
+- Script: `scripts/sync-lecture-recordings.ts`
+
+### Available Commands
+```bash
+# Sync slides only (no git push)
+npm run sync:slides
+
+# Sync slides and push to GitHub
+npm run sync:slides:push
+
+# Sync recordings from Google Sheet (no git push)
+npm run sync:recordings
+
+# Sync recordings and push to GitHub
+npm run sync:recordings:push
+
+# Test authentication
+npm run debug-auth
+```
+
+For detailed setup instructions, see [docs/RECORDINGS_SYNC_SETUP.md](docs/RECORDINGS_SYNC_SETUP.md).
+
 ## Getting Started
 
 First, run the development server:

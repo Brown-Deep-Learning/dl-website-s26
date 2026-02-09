@@ -59,7 +59,7 @@ export const lectureGroups: LectureGroup[] = [
         "date": "2026-02-06",
         "title": "CNNs",
         "slidesLink": "slides/lecture_8.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://drive.google.com/file/d/18Eq3kpxfE_I8WdmwGZWOxiF3ZlHZAGzH/view"
       }
     ]
   },
@@ -71,7 +71,7 @@ export const lectureGroups: LectureGroup[] = [
         "date": "2026-02-09",
         "title": "ResNet and Adversarial Learning",
         "slidesLink": "slides/lecture_9.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2a70d636-cc7a-46de-884c-b3d901596cc9"
       }
     ]
   },

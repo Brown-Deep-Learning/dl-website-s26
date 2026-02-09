@@ -70,7 +70,7 @@ export const lectureGroups: LectureGroup[] = [
         "id": 9,
         "date": "2026-02-09",
         "title": "ResNet and Adversarial Learning",
-        "slidesLink": "",
+        "slidesLink": "slides/lecture_9.pdf",
         "recordingLink": ""
       }
     ]

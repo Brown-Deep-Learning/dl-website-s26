@@ -429,11 +429,16 @@ async function commitAndPush(updatedCount: number): Promise<void> {
         `https://x-access-token:${CONFIG.GITHUB_TOKEN}@github.com/`
       );
 
+      // Pull latest remote changes before pushing to avoid non-fast-forward rejection
+      console.log('  Pulling latest remote changes (rebase)...');
+      execGit(`git pull --rebase ${authenticatedUrl} ${currentBranch}`, { silent: false });
+
       // Push with authenticated URL
       execGit(`git push ${authenticatedUrl} ${currentBranch}`, { silent: false });
     } else {
       // Use default git authentication (local)
       console.log('  Using default git authentication');
+      execGit(`git pull --rebase origin ${currentBranch}`, { silent: false });
       execGit(`git push origin ${currentBranch}`, { silent: false });
     }
 

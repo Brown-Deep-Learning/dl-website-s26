@@ -16,7 +16,9 @@
     "sync:recordings:push": "tsx scripts/sync-lecture-recordings.ts --push",
     "debug-auth": "tsx scripts/debug-auth.ts",
     "panopto-auth": "tsx scripts/panopto-oauth-setup.ts",
-    "diagnose-panopto": "tsx scripts/diagnose-panopto-oauth.ts"
+    "diagnose-panopto": "tsx scripts/diagnose-panopto-oauth.ts",
+    "sync:slides:from-slack": "tsx scripts/sync-slides-from-slack.ts",
+    "sync:slides:from-slack:push": "tsx scripts/sync-slides-from-slack.ts --push"
   },
   "dependencies": {
     "@tsparticles/engine": "^3.8.0",
@@ -34,6 +36,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@slack/web-api": "^7.14.0",
     "@types/express": "^4.17.21",
     "@types/node": "^20.19.30",
     "@types/react": "^19.1.2",

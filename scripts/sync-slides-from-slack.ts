@@ -4,7 +4,7 @@
  * Sync Slides and Recordings from Slack Channel
  *
  * Polls a shared Slack group DM/channel for new content:
- * - PDF file attachments → uploads to Google Drive as lecture_N.pdf,
+ * - PDF file attachments → downloads and saves to public/slides/ as lecture_N.pdf,
  *   updates lectureData.ts slidesLink
  * - Messages starting with "recording: <url>" → updates lectureData.ts
  *   recordingLink for the next missing lecture
@@ -20,8 +20,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
-import { Readable } from 'stream';
-import { google } from 'googleapis';
 import { WebClient } from '@slack/web-api';
 import * as dotenv from 'dotenv';
 import { execSync } from 'child_process';
@@ -33,9 +31,7 @@ dotenv.config({ path: '.env.local' });
 const CONFIG = {
   SLACK_BOT_TOKEN: process.env.SLACK_BOT_TOKEN,
   SLACK_CHANNEL_ID: process.env.SLACK_CHANNEL_ID,
-  GOOGLE_DRIVE_FOLDER_ID: process.env.GOOGLE_DRIVE_FOLDER_ID,
-  GOOGLE_SERVICE_ACCOUNT_PATH: process.env.GOOGLE_SERVICE_ACCOUNT_PATH,
-  GOOGLE_SERVICE_ACCOUNT_JSON: process.env.GOOGLE_SERVICE_ACCOUNT_JSON,
+  SLIDES_DIR: path.join(process.cwd(), 'public', 'slides'),
   LECTURE_DATA_PATH: path.join(process.cwd(), 'src', 'app', 'data', 'lectureData.ts'),
   STATE_FILE_PATH: path.join(process.cwd(), 'scripts', 'slack-sync-state.json'),
   // Git configuration
@@ -86,83 +82,34 @@ function saveState(state: SyncState): void {
   console.log('  ✓ State file updated');
 }
 
-// ─── Google Drive ─────────────────────────────────────────────────────────────
+// ─── Local Slides ─────────────────────────────────────────────────────────────
 
-async function initGoogleDrive() {
-  console.log('🔐 Initializing Google Drive client...');
+/** List existing lecture PDF files in public/slides/ */
+function listLocalSlides(): string[] {
+  console.log('📄 Listing existing PDF files in public/slides/...');
 
-  let auth;
-
-  if (CONFIG.GOOGLE_SERVICE_ACCOUNT_JSON) {
-    console.log('  Using base64 encoded service account credentials (CI/CD mode)');
-    try {
-      const decodedJson = Buffer.from(CONFIG.GOOGLE_SERVICE_ACCOUNT_JSON, 'base64').toString('utf-8');
-      const credentials = JSON.parse(decodedJson);
-      auth = new google.auth.GoogleAuth({
-        credentials,
-        scopes: ['https://www.googleapis.com/auth/drive'],
-      });
-    } catch (error: any) {
-      throw new Error(`Failed to parse base64 encoded service account JSON: ${error.message}`);
-    }
-  } else if (CONFIG.GOOGLE_SERVICE_ACCOUNT_PATH) {
-    console.log('  Using service account file path (local mode)');
-    if (!fs.existsSync(CONFIG.GOOGLE_SERVICE_ACCOUNT_PATH)) {
-      throw new Error(`Service account file not found: ${CONFIG.GOOGLE_SERVICE_ACCOUNT_PATH}`);
-    }
-    auth = new google.auth.GoogleAuth({
-      keyFile: CONFIG.GOOGLE_SERVICE_ACCOUNT_PATH,
-      scopes: ['https://www.googleapis.com/auth/drive'],
-    });
-  } else {
-    throw new Error('Missing GOOGLE_SERVICE_ACCOUNT_PATH or GOOGLE_SERVICE_ACCOUNT_JSON in environment');
+  if (!fs.existsSync(CONFIG.SLIDES_DIR)) {
+    fs.mkdirSync(CONFIG.SLIDES_DIR, { recursive: true });
+    console.log('  Created public/slides/ directory');
   }
 
-  const drive = google.drive({ version: 'v3', auth });
-  console.log('✅ Google Drive client initialized');
-  return drive;
-}
+  const files = fs.readdirSync(CONFIG.SLIDES_DIR)
+    .filter(f => f.endsWith('.pdf'));
 
-async function listDrivePDFs(drive: any): Promise<any[]> {
-  console.log('📄 Listing existing PDF files from Google Drive...');
-
-  if (!CONFIG.GOOGLE_DRIVE_FOLDER_ID) {
-    throw new Error('Missing GOOGLE_DRIVE_FOLDER_ID in environment');
-  }
-
-  const response = await drive.files.list({
-    q: `'${CONFIG.GOOGLE_DRIVE_FOLDER_ID}' in parents and mimeType='application/pdf' and trashed=false`,
-    fields: 'files(id, name, size)',
-    orderBy: 'name',
-    supportsAllDrives: true,
-    includeItemsFromAllDrives: true,
-  });
-
-  const files = response.data.files || [];
-  console.log(`✅ Found ${files.length} existing PDF files in Google Drive`);
+  console.log(`✅ Found ${files.length} existing PDF files in public/slides/`);
   return files;
 }
 
-async function uploadToDrive(drive: any, pdfBuffer: Buffer, lectureId: number): Promise<void> {
+/** Save a PDF buffer to public/slides/lecture_N.pdf */
+function saveSlideLocally(pdfBuffer: Buffer, lectureId: number): string {
   const filename = `lecture_${lectureId}.pdf`;
-  console.log(`  ⬆️  Uploading ${filename} to Google Drive...`);
-  console.log(`  📁 Target folder ID: ${CONFIG.GOOGLE_DRIVE_FOLDER_ID}`);
+  const filepath = path.join(CONFIG.SLIDES_DIR, filename);
+  console.log(`  💾 Saving ${filename} to public/slides/...`);
 
-  await drive.files.create({
-    requestBody: {
-      name: filename,
-      parents: [CONFIG.GOOGLE_DRIVE_FOLDER_ID!],
-      mimeType: 'application/pdf',
-    },
-    media: {
-      mimeType: 'application/pdf',
-      body: Readable.from(pdfBuffer),
-    },
-    supportsAllDrives: true,
-    fields: 'id, name',
-  });
+  fs.writeFileSync(filepath, pdfBuffer);
 
-  console.log(`  ✓ Uploaded: ${filename}`);
+  console.log(`  ✓ Saved: ${filepath}`);
+  return filename;
 }
 
 // ─── Lecture data ─────────────────────────────────────────────────────────────
@@ -187,21 +134,21 @@ export const lectureGroups: LectureGroup[] = ${JSON.stringify(lectureGroups, nul
 }
 
 /** Returns the id of the next lecture missing a slidesLink, or null if all are set. */
-function getNextMissingSlideId(existingDriveFiles: any[]): number | null {
+function getNextMissingSlideId(existingLocalFiles: string[]): number | null {
   const lectureGroups = parseLectureData();
   const allLectures: Lecture[] = lectureGroups.flatMap(g => g.lectures).sort((a, b) => a.id - b.id);
 
-  // Build set of lecture IDs already on Drive (belt-and-suspenders check)
+  // Build set of lecture IDs already saved locally (belt-and-suspenders check)
   const uploadedIds = new Set<number>();
-  for (const f of existingDriveFiles) {
-    const m = f.name.match(/lecture[_\s-](\d+)\.pdf/i);
+  for (const f of existingLocalFiles) {
+    const m = f.match(/lecture[_\s-](\d+)\.pdf/i);
     if (m) uploadedIds.add(parseInt(m[1], 10));
   }
 
   for (const lecture of allLectures) {
-    const alreadyUploaded = uploadedIds.has(lecture.id);
+    const alreadyExists = uploadedIds.has(lecture.id);
     const hasSlideLink = lecture.slidesLink && lecture.slidesLink.trim() !== '';
-    if (!hasSlideLink && !alreadyUploaded) {
+    if (!hasSlideLink && !alreadyExists) {
       return lecture.id;
     }
   }
@@ -399,8 +346,8 @@ async function commitAndPush(slidesCount: number, recordingsCount: number): Prom
     if (recordingsCount > 0) parts.push(`${recordingsCount} recording(s)`);
     const commitMessage = `Automated sync: Slack import - ${parts.join(', ')}`;
 
-    execGit('git add src/app/data/lectureData.ts scripts/slack-sync-state.json', { silent: true });
-    console.log('  ✓ Staged: lectureData.ts, slack-sync-state.json');
+    execGit('git add src/app/data/lectureData.ts scripts/slack-sync-state.json public/slides/', { silent: true });
+    console.log('  ✓ Staged: lectureData.ts, slack-sync-state.json, public/slides/');
 
     execGit(`git commit -m "${commitMessage}"`, { silent: false });
     console.log(`  ✓ Commit created: "${commitMessage}"`);
@@ -446,7 +393,6 @@ async function main(): Promise<void> {
   const missing: string[] = [];
   if (!CONFIG.SLACK_BOT_TOKEN) missing.push('SLACK_BOT_TOKEN');
   if (!CONFIG.SLACK_CHANNEL_ID) missing.push('SLACK_CHANNEL_ID');
-  if (!CONFIG.GOOGLE_DRIVE_FOLDER_ID) missing.push('GOOGLE_DRIVE_FOLDER_ID');
   if (missing.length > 0) {
     console.error(`❌ Missing required environment variables: ${missing.join(', ')}`);
     process.exit(1);
@@ -472,11 +418,10 @@ async function main(): Promise<void> {
   if (pdfMessages.length > 0) {
     console.log('\n📚 Processing PDF slides...\n');
 
-    const drive = await initGoogleDrive();
-    let existingDriveFiles = await listDrivePDFs(drive);
+    let existingLocalFiles = listLocalSlides();
 
     for (const { ts, file } of pdfMessages) {
-      const lectureId = getNextMissingSlideId(existingDriveFiles);
+      const lectureId = getNextMissingSlideId(existingLocalFiles);
       if (lectureId === null) {
         console.warn('⚠️  No lectures with missing slidesLink found — skipping remaining PDFs');
         break;
@@ -488,10 +433,10 @@ async function main(): Promise<void> {
         const pdfBuffer = await downloadSlackFile(file);
         console.log(`  ✓ Downloaded from Slack (${Math.round(pdfBuffer.length / 1024)} KB)`);
 
-        await uploadToDrive(drive, pdfBuffer, lectureId);
+        saveSlideLocally(pdfBuffer, lectureId);
 
-        // Update in-memory drive file list so next iteration sees the upload
-        existingDriveFiles = [...existingDriveFiles, { name: `lecture_${lectureId}.pdf` }];
+        // Update in-memory file list so next iteration sees the new file
+        existingLocalFiles = [...existingLocalFiles, `lecture_${lectureId}.pdf`];
 
         updateSlidesLink(lectureId, `slides/lecture_${lectureId}.pdf`);
 
@@ -499,13 +444,6 @@ async function main(): Promise<void> {
         slidesUploaded++;
       } catch (error: any) {
         console.error(`  ✗ Failed to process slide from message ${ts}:`, error.message);
-        if (error.response) {
-          console.error('  ✗ API response status:', error.response.status);
-          console.error('  ✗ API response data:', JSON.stringify(error.response.data, null, 2));
-        }
-        if (error.errors) {
-          console.error('  ✗ API errors:', JSON.stringify(error.errors, null, 2));
-        }
         // Don't mark as processed so it can be retried next run
       }
     }

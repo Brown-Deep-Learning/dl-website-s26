@@ -82,7 +82,7 @@ export const lectureGroups: LectureGroup[] = [
         "id": 10,
         "date": "2026-02-11",
         "title": "Learning with Sequential Data",
-        "slidesLink": "",
+        "slidesLink": "slides/lecture_10.pdf",
         "recordingLink": ""
       },
       {

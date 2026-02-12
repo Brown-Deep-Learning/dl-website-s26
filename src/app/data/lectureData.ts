@@ -10,7 +10,7 @@ export const lectureGroups: LectureGroup[] = [
         "date": "2026-01-21",
         "title": "Welcome to Deep Learning",
         "slidesLink": "slides/lecture_1.pdf",
-        "recordingLink": "<https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=332be3be-80dd-4a82-b938-b3d901596ce4>"
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=332be3be-80dd-4a82-b938-b3d901596ce4"
       },
       {
         "id": 2,
@@ -46,7 +46,12 @@ export const lectureGroups: LectureGroup[] = [
         "title": "AutoDiff and Hyperparameter Tuning",
         "slidesLink": "slides/lecture_6.pdf",
         "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=feb71d29-5062-4564-847c-b3d901596c7e"
-      },
+      }
+    ]
+  },
+  {
+    "title": "Weeks 3-4: Convolutional Neural Networks",
+    "lectures": [
       {
         "id": 7,
         "date": "2026-02-04",
@@ -60,12 +65,7 @@ export const lectureGroups: LectureGroup[] = [
         "title": "CNNs",
         "slidesLink": "slides/lecture_8.pdf",
         "recordingLink": "https://drive.google.com/file/d/18Eq3kpxfE_I8WdmwGZWOxiF3ZlHZAGzH/view"
-      }
-    ]
-  },
-  {
-    "title": "Weeks 3-5: Convolutional Neural Networks",
-    "lectures": [
+      },
       {
         "id": 9,
         "date": "2026-02-09",
@@ -76,14 +76,14 @@ export const lectureGroups: LectureGroup[] = [
     ]
   },
   {
-    "title": "Weeks 6-8: Learning with Sequential Data",
+    "title": "Weeks 4-6: Learning with Sequential Data",
     "lectures": [
       {
         "id": 10,
         "date": "2026-02-11",
         "title": "Learning with Sequential Data",
         "slidesLink": "slides/lecture_10.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=332be3be-80dd-4a82-b938-b3d901596ce4"
       },
       {
         "id": 11,
@@ -130,7 +130,7 @@ export const lectureGroups: LectureGroup[] = [
     ]
   },
   {
-    "title": "Weeks 9-11: Unsupervised Learning and Reinforcement Learning",
+    "title": "Weeks 7-8: Unsupervised Learning and Reinforcement Learning",
     "lectures": [
       {
         "id": 17,
@@ -191,7 +191,7 @@ export const lectureGroups: LectureGroup[] = [
     ]
   },
   {
-    "title": "Weeks 12-13: Looking Forward",
+    "title": "Weeks 8-13: Looking Forward",
     "lectures": [
       {
         "id": 25,

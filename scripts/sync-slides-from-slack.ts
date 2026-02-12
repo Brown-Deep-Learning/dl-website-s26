@@ -100,7 +100,7 @@ async function initGoogleDrive() {
       const credentials = JSON.parse(decodedJson);
       auth = new google.auth.GoogleAuth({
         credentials,
-        scopes: ['https://www.googleapis.com/auth/drive.file'],
+        scopes: ['https://www.googleapis.com/auth/drive'],
       });
     } catch (error: any) {
       throw new Error(`Failed to parse base64 encoded service account JSON: ${error.message}`);
@@ -112,7 +112,7 @@ async function initGoogleDrive() {
     }
     auth = new google.auth.GoogleAuth({
       keyFile: CONFIG.GOOGLE_SERVICE_ACCOUNT_PATH,
-      scopes: ['https://www.googleapis.com/auth/drive.file'],
+      scopes: ['https://www.googleapis.com/auth/drive'],
     });
   } else {
     throw new Error('Missing GOOGLE_SERVICE_ACCOUNT_PATH or GOOGLE_SERVICE_ACCOUNT_JSON in environment');
@@ -146,6 +146,7 @@ async function listDrivePDFs(drive: any): Promise<any[]> {
 async function uploadToDrive(drive: any, pdfBuffer: Buffer, lectureId: number): Promise<void> {
   const filename = `lecture_${lectureId}.pdf`;
   console.log(`  ⬆️  Uploading ${filename} to Google Drive...`);
+  console.log(`  📁 Target folder ID: ${CONFIG.GOOGLE_DRIVE_FOLDER_ID}`);
 
   await drive.files.create({
     requestBody: {
@@ -207,11 +208,13 @@ function getNextMissingSlideId(existingDriveFiles: any[]): number | null {
   return null;
 }
 
-/** Returns the id of the next lecture missing a recordingLink, or null if all are set. */
+/** Returns the id of the next lecture missing a recordingLink, or null if all are set.
+ *  Lecture 1 is always skipped (intro lecture, no recording needed). */
 function getNextMissingRecordingId(): number | null {
   const lectureGroups = parseLectureData();
   const allLectures: Lecture[] = lectureGroups.flatMap(g => g.lectures).sort((a, b) => a.id - b.id);
   for (const lecture of allLectures) {
+    if (lecture.id === 1) continue; // Lecture 1 is skipped by design
     if (!lecture.recordingLink || lecture.recordingLink.trim() === '') {
       return lecture.id;
     }
@@ -308,7 +311,9 @@ async function fetchUnprocessedMessages(
     if (msg.text) {
       const match = (msg.text as string).match(/^recording:\s*(\S+)/i);
       if (match) {
-        recordingMessages.push({ ts: msg.ts!, url: match[1] });
+        // Slack auto-wraps URLs in angle brackets: <https://...> — strip them
+        const url = match[1].replace(/^<|>$/g, '');
+        recordingMessages.push({ ts: msg.ts!, url });
       }
     }
   }
@@ -494,6 +499,13 @@ async function main(): Promise<void> {
         slidesUploaded++;
       } catch (error: any) {
         console.error(`  ✗ Failed to process slide from message ${ts}:`, error.message);
+        if (error.response) {
+          console.error('  ✗ API response status:', error.response.status);
+          console.error('  ✗ API response data:', JSON.stringify(error.response.data, null, 2));
+        }
+        if (error.errors) {
+          console.error('  ✗ API errors:', JSON.stringify(error.errors, null, 2));
+        }
         // Don't mark as processed so it can be retried next run
       }
     }

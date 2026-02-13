@@ -89,7 +89,7 @@ export const lectureGroups: LectureGroup[] = [
         "id": 11,
         "date": "2026-02-13",
         "title": "RNNs and LSTMs",
-        "slidesLink": "",
+        "slidesLink": "slides/lecture_11.pdf",
         "recordingLink": ""
       },
       {

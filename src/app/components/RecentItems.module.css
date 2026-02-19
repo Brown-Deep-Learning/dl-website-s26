@@ -169,6 +169,53 @@
 
   .recentItem {
     padding: 2rem 1.5rem;
+    overflow: hidden;
+  }
+
+  .links {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .linkButton {
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: 100%;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    text-align: center;
+    justify-content: center;
+    word-break: break-word;
+  }
+
+  .itemTitle {
+    font-size: 1.2rem;
+    word-break: break-word;
+  }
+
+  .itemDate {
+    font-size: 0.9rem;
+    word-break: break-word;
+  }
+
+  .title {
+    font-size: 1.2rem;
   }
 }
 
+@media (max-width: 400px) {
+  .recentItem {
+    padding: 1.5rem 1rem;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .linkButton {
+    width: 100%;
+    justify-content: center;
+  }
+}

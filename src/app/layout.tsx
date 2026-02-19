@@ -43,7 +43,6 @@ export const metadata = {
 };
 
 import StyledComponentsRegistry from "../lib/registry";
-import ClickSizzleProvider from "./components/ClickSizzleProvider";
 
 export default function RootLayout({
   children,
@@ -59,7 +58,7 @@ export default function RootLayout({
       </head>
       <body>
         <StyledComponentsRegistry>
-          <ClickSizzleProvider>{children}</ClickSizzleProvider>
+          {children}
         </StyledComponentsRegistry>
       </body>
     </html>

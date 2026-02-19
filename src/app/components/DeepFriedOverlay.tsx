@@ -624,58 +624,7 @@ const DeepFriedOverlay = () => {
   const currentFillRef = useRef(0);
   const currentDarknessRef = useRef(0);
   
-  // Audio ref for sizzle sound effect
-  const sizzleAudioRef = useRef<HTMLAudioElement | null>(null);
-  const [isMuted, setIsMuted] = useState(false);
 
-  // Initialize mute state from localStorage
-  useEffect(() => {
-    const savedMuteState = localStorage.getItem('sizzleMuted');
-    if (savedMuteState === 'true') {
-      setIsMuted(true);
-    }
-  }, []);
-
-  // Initialize audio element
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      sizzleAudioRef.current = new Audio('/audio/sizzle.mp3');
-      sizzleAudioRef.current.loop = true; // Loop continuously
-      sizzleAudioRef.current.volume = 0.3; // Set volume to 30%
-    }
-    
-    return () => {
-      if (sizzleAudioRef.current) {
-        sizzleAudioRef.current.pause();
-        sizzleAudioRef.current = null;
-      }
-    };
-  }, []);
-
-  // Manage audio playback based on visibility and mute state
-  useEffect(() => {
-    const audio = sizzleAudioRef.current;
-    if (!audio) return;
-
-    if (isVisible && !isMuted) {
-      // Play the looping audio
-      audio.play().catch(err => {
-        console.log('Audio autoplay prevented:', err);
-      });
-    } else {
-      // Pause the audio
-      audio.pause();
-    }
-  }, [isVisible, isMuted]);
-
-  // Toggle mute function
-  const toggleMute = useCallback(() => {
-    setIsMuted(prev => {
-      const newValue = !prev;
-      localStorage.setItem('sizzleMuted', String(newValue));
-      return newValue;
-    });
-  }, []);
 
   useEffect(() => {
     // More bubbles, with clustering near bottom (heat source)
@@ -1006,17 +955,6 @@ const DeepFriedOverlay = () => {
       
     </OilContainer>
     
-    {/* Mute Button - rendered outside OilContainer so it can receive clicks */}
-    <MuteButton 
-      $isMuted={isMuted}
-      $isVisible={isVisible}
-      onClick={toggleMute}
-      aria-label={isMuted ? "Unmute sizzle sound" : "Mute sizzle sound"}
-    >
-      <MuteIcon $isMuted={isMuted}>
-        {isMuted ? '🔇' : '🔊'}
-      </MuteIcon>
-    </MuteButton>
     </>
   );
 };

@@ -89,15 +89,15 @@ export const lectureGroups: LectureGroup[] = [
         "id": 11,
         "date": "2026-02-13",
         "title": "RNNs and LSTMs",
-        "slidesLink": "",
-        "recordingLink": ""
+        "slidesLink": "slides/lecture_11.pdf",
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c18747bf-2b38-403a-ad4d-b3d901596d01"
       },
       {
         "id": 12,
         "date": "2026-02-18",
         "title": "Seq2Seq",
-        "slidesLink": "",
-        "recordingLink": ""
+        "slidesLink": "slides/lecture_12.pdf",
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b5041ecb-8631-4afc-87e6-b3d901596d51&start=273"
       },
       {
         "id": 13,

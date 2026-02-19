@@ -223,7 +223,7 @@ const ActionLink = styled.a`
   &:hover {
     background: var(--neon-pink);
     transform: scale(1.05);
-    box-shadow: 
+    box-wwwshadow: 
       0 0 15px var(--neon-pink),
       0 0 30px var(--neon-pink);
   }

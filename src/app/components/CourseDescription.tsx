@@ -16,6 +16,14 @@ const Section = styled.section`
   align-items: center;
   position: relative;
   z-index: var(--z-content);
+  
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 2rem 0.5rem;
+  }
 `;
 
 const ContentCard = styled.div`
@@ -53,6 +61,16 @@ const ContentBody = styled.div`
   flex-direction: column;
   gap: 2rem;
   background: linear-gradient(to bottom, var(--cream) 0%, var(--diner-white) 100%);
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1rem;
+    gap: 1rem;
+  }
 `;
 
 const TextContent = styled.div`
@@ -73,6 +91,15 @@ const Heading = styled.h2`
   svg {
     color: var(--mint-green);
     filter: drop-shadow(0 0 5px var(--mint-green));
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+    gap: 0.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
   }
 `;
 
@@ -119,6 +146,17 @@ const InfoGrid = styled.div`
   box-shadow: 
     0 8px 20px rgba(0,0,0,0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    padding: 1.25rem;
+    gap: 1rem;
+  }
 `;
 
 const InfoItem = styled.div`
@@ -188,6 +226,18 @@ const ActionLink = styled.a`
     box-shadow: 
       0 0 15px var(--neon-pink),
       0 0 30px var(--neon-pink);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    flex: 1 1 auto;
+    justify-content: center;
   }
 `;
 

@@ -15,6 +15,14 @@ const Section = styled.section`
   align-items: center;
   position: relative;
   z-index: var(--z-content);
+  
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+  }
+  
+  @media (max-width: 480px) {
+    padding: 2rem 0.5rem;
+  }
 `;
 
 
@@ -46,6 +54,30 @@ const MenuBoard = styled.div`
     letter-spacing: 2px;
     border: 2px solid var(--chrome-silver);
     box-shadow: 0 0 10px var(--cherry-red);
+    white-space: nowrap;
+    font-size: 0.85rem;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    
+    &::before {
+      font-size: 0.75rem;
+      padding: 4px 14px;
+      letter-spacing: 1px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    padding: 1.5rem 1rem;
+    border-width: 3px;
+    
+    &::before {
+      font-size: 0.65rem;
+      padding: 3px 10px;
+      letter-spacing: 0.5px;
+    }
   }
 `;
 
@@ -67,6 +99,17 @@ const CategoryTitle = styled.h3`
     content: '⭐';
     font-size: 1.2rem;
   }
+  
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    margin: 1.5rem 0 0.75rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
 `;
 
 const MenuItem = styled.li`
@@ -83,6 +126,12 @@ const MenuItem = styled.li`
     background: rgba(152, 251, 152, 0.1);
     padding-left: 10px;
     border-radius: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
   }
 `;
 
@@ -105,11 +154,25 @@ const ItemName = styled.span`
   color: var(--cream);
   text-transform: uppercase;
   letter-spacing: 1px;
+  
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  }
 `;
 
 const ActionButtons = styled.div`
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
+  
+  @media (max-width: 768px) {
+    gap: 0.5rem;
+  }
 `;
 
 const ActionBtn = styled.a`
@@ -131,6 +194,12 @@ const ActionBtn = styled.a`
     background: var(--cherry-red);
     border-color: var(--cherry-red);
     box-shadow: 0 0 10px var(--cherry-red);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    min-height: 40px;
   }
 `;
 

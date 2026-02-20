@@ -110,7 +110,7 @@ export const lectureGroups: LectureGroup[] = [
         "id": 14,
         "date": "2026-02-23",
         "title": "Transformers and LLMs",
-        "slidesLink": "",
+        "slidesLink": "slides/lecture_14.pdf",
         "recordingLink": ""
       },
       {

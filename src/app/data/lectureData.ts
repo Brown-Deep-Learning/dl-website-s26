@@ -102,21 +102,21 @@ export const lectureGroups: LectureGroup[] = [
       {
         "id": 13,
         "date": "2026-02-20",
-        "title": "High Performance Computing (Oscar Tutorial)",
+        "title": "Transformers and LLMs",
         "slidesLink": "slides/lecture_13.pdf",
         "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=fd7f5e8d-0677-498b-a0f5-b3d901596d69"
       },
       {
         "id": 14,
         "date": "2026-02-23",
-        "title": "Transformers and LLMs",
-        "slidesLink": "slides/lecture_14.pdf",
+        "title": "Large Language Models and Generative AI",
+        "slidesLink":"",
         "recordingLink": ""
       },
       {
         "id": 15,
         "date": "2026-02-25",
-        "title": "Large Language Models and Generative AI",
+        "title": "High Performance Computing (Oscar Tutorial)",
         "slidesLink": "",
         "recordingLink": ""
       },

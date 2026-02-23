@@ -109,9 +109,9 @@ export const lectureGroups: LectureGroup[] = [
       {
         "id": 14,
         "date": "2026-02-23",
-        "title": "Large Language Models and Generative AI",
-        "slidesLink":"",
-        "recordingLink": ""
+        "title": "Large Language Models",
+        "slidesLink": "slides/lecture_14.pdf",
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8b6d7b94-3f10-4715-a5c8-b3fa0130cb77&amp;start=675.34414"
       },
       {
         "id": 15,

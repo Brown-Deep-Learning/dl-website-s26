@@ -40,17 +40,11 @@ export const assignments = [
   {
     id: 4,
     name: "Assignment 4: CNNS",
-    outDate: "2026-02-25",
-    // This one has both conceptual and programming:
-    conceptual: {
-      title: "Conceptual",
-      link: "",
-      inDate: "2026-03-05",
-    },
+    outDate: "2026-02-26",
     programming: {
       title: "Programming",
-      link: "",
-      inDate: "2026-03-12",
+      link: "https://hackmd.io/HUv1pr9cR6uy4ZcpB3AFIg?both",
+      inDate: "2026-03-06",
     },
   },
   {

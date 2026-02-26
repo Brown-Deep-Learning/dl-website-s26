@@ -117,8 +117,8 @@ export const lectureGroups: LectureGroup[] = [
         "id": 15,
         "date": "2026-02-25",
         "title": "High Performance Computing (Oscar Tutorial)",
-        "slidesLink": "",
-        "recordingLink": ""
+        "slidesLink": "slides/lecture_15.pdf",
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3a8d180a-cb28-4d0f-9e26-b3fc0139041f"
       },
       {
         "id": 16,

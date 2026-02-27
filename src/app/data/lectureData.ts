@@ -124,7 +124,7 @@ export const lectureGroups: LectureGroup[] = [
         "id": 16,
         "date": "2026-02-27",
         "title": "Autoencoders and VAEs",
-        "slidesLink": "",
+        "slidesLink": "slides/lecture_16.pdf",
         "recordingLink": ""
       }
     ]

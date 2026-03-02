@@ -136,7 +136,7 @@ export const lectureGroups: LectureGroup[] = [
         "id": 17,
         "date": "2026-03-02",
         "title": "Image Generation and GANs",
-        "slidesLink": "",
+        "slidesLink": "slides/lecture_17.pdf",
         "recordingLink": ""
       },
       {

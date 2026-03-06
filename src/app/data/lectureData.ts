@@ -123,9 +123,9 @@ export const lectureGroups: LectureGroup[] = [
       {
         "id": 16,
         "date": "2026-02-27",
-        "title": "Autoencoders and VAEs",
+        "title": "GANs",
         "slidesLink": "slides/lecture_16.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f82d6815-603a-49f0-9a41-b3d901596db6&start=180"
       }
     ]
   },
@@ -135,54 +135,47 @@ export const lectureGroups: LectureGroup[] = [
       {
         "id": 17,
         "date": "2026-03-02",
-        "title": "Image Generation and GANs",
+        "title": "Diiffusion Models",
         "slidesLink": "slides/lecture_17.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=6db7c4b2-ab2c-4bba-81d2-b3d901596dd1&start=51"
       },
       {
         "id": 18,
         "date": "2026-03-04",
         "title": "Diffusion Models",
-        "slidesLink": "",
-        "recordingLink": ""
+        "slidesLink": "slides/lecture_18.pdf",
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=300d0c08-7e36-4125-885a-b3d901596ded&start=100"
       },
       {
         "id": 19,
-        "date": "2026-03-06",
-        "title": "Geometric Deep Learning",
-        "slidesLink": "",
+        "date": "2026-03-09",
+        "title": "Reinforcement Learning",
+        "slidesLink": "slides/lecture_19.pdf",
         "recordingLink": ""
       },
       {
         "id": 20,
-        "date": "2026-03-09",
-        "title": "Reinforcement Learning",
-        "slidesLink": "",
-        "recordingLink": ""
-      },
-      {
-        "id": 21,
         "date": "2026-03-11",
         "title": "Policy Gradient Methods",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
-        "id": 22,
+        "id": 21,
         "date": "2026-03-13",
         "title": "PPO",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
-        "id": 23,
+        "id": 22,
         "date": "2026-03-16",
         "title": "GRPO and LLMs",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
-        "id": 24,
+        "id": 23,
         "date": "2026-03-18",
         "title": "Self-Supervised Learning",
         "slidesLink": "",
@@ -194,79 +187,79 @@ export const lectureGroups: LectureGroup[] = [
     "title": "Weeks 8-13: Looking Forward",
     "lectures": [
       {
-        "id": 25,
+        "id": 24,
         "date": "2026-03-20",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
-        "id": 26,
+        "id": 25,
         "date": "2026-03-30",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
-        "id": 27,
+        "id": 26,
         "date": "2026-04-01",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
-        "id": 28,
+        "id": 27,
         "date": "2026-04-03",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
-        "id": 29,
+        "id": 28,
         "date": "2026-04-06",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
-        "id": 30,
+        "id": 29,
         "date": "2026-04-08",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
-        "id": 31,
+        "id": 30,
         "date": "2026-04-10",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
-        "id": 32,
+        "id": 31,
         "date": "2026-04-13",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
-        "id": 33,
+        "id": 32,
         "date": "2026-04-15",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
-        "id": 34,
+        "id": 33,
         "date": "2026-04-17",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
-        "id": 35,
+        "id": 34,
         "date": "2026-04-20",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
-        "id": 36,
+        "id": 35,
         "date": "2026-04-22",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
-        "id": 37,
+        "id": 36,
         "date": "2026-04-24",
         "slidesLink": "",
         "recordingLink": ""

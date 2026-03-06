@@ -1,10 +1,10 @@
 name: Sync Slides and Recordings from Slack
 
 on:
-  # 11:00 AM EST (16:00 UTC) — picks up slides sent before lecture
+  # 12:00 PM EST (17:00 UTC) — picks up slides sent before lecture
   # 5:00 PM EST (22:00 UTC) — picks up recording links sent after lecture
   schedule:
-    - cron: '0 16 * * 1,3,5'
+    - cron: '0 17 * * 1,3,5'
     - cron: '0 22 * * 1,3,5'
 
   # Allow manual trigger for testing

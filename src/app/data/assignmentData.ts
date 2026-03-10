@@ -53,19 +53,19 @@ export const assignments = [
     outDate: "2026-03-11",
     conceptual: {
       title: "Conceptual",
-      link: "",
-      inDate: "2026-03-19",
+      link: "https://hackmd.io/@browndls26/SycTBj3Ybl",
+      inDate: "2026-03-29",
     },
     programming: {
       title: "Programming",
-      link: "",
-      inDate: "2026-03-26",
+      link: "https://hackmd.io/fMYplVVGQPWROdqskw7f1w",
+      inDate: "2026-03-29",
     },
   },
   {
     id: 6,
     name: "Assignment 6: Generative Modeling",
-    outDate: "2026-03-25",
+    outDate: "2026-04-1",
     programming: {
       title: "Programming",
       link: "",

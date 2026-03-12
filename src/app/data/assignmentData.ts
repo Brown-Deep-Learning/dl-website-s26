@@ -53,12 +53,12 @@ export const assignments = [
     outDate: "2026-03-11",
     conceptual: {
       title: "Conceptual",
-      link: "https://hackmd.io/@browndls26/SycTBj3Ybl",
+      link: "https://hackmd.io/fMYplVVGQPWROdqskw7f1w",
       inDate: "2026-03-29",
     },
     programming: {
       title: "Programming",
-      link: "https://hackmd.io/fMYplVVGQPWROdqskw7f1w",
+      link: "https://hackmd.io/@browndls26/SycTBj3Ybl",
       inDate: "2026-03-29",
     },
   },
@@ -81,5 +81,5 @@ export const assignments = [
       link: "",
       inDate: "2026-04-23",
     },
-  }
+  },
 ];

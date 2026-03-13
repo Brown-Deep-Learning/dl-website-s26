@@ -171,7 +171,7 @@ export const lectureGroups: LectureGroup[] = [
         "id": 22,
         "date": "2026-03-16",
         "title": "GRPO and LLMs",
-        "slidesLink": "",
+        "slidesLink": "slides/lecture_22.pdf",
         "recordingLink": ""
       },
       {

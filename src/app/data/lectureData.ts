@@ -151,21 +151,21 @@ export const lectureGroups: LectureGroup[] = [
         "date": "2026-03-09",
         "title": "Reinforcement Learning",
         "slidesLink": "slides/lecture_19.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=282d19ac-145e-4cc8-b1fc-b3d901596e7d"
       },
       {
         "id": 20,
         "date": "2026-03-11",
         "title": "Policy Gradient Methods",
         "slidesLink": "slides/lecture_20.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=420ceb3f-92fc-4e1b-81e9-b3d901596e97"
       },
       {
         "id": 21,
         "date": "2026-03-13",
         "title": "PPO",
         "slidesLink": "slides/lecture_21.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=49b5fd27-d8a5-4187-8d0d-b3d901596eaf"
       },
       {
         "id": 22,

@@ -178,7 +178,7 @@ export const lectureGroups: LectureGroup[] = [
         "id": 23,
         "date": "2026-03-18",
         "title": "Self-Supervised Learning",
-        "slidesLink": "",
+        "slidesLink": "slides/lecture_23.pdf",
         "recordingLink": ""
       }
     ]

@@ -148,35 +148,35 @@ export const lectureGroups: LectureGroup[] = [
       },
       {
         "id": 19,
-        "date": "2026-03-09",
+        "date": "2026-03-06",
         "title": "Reinforcement Learning",
         "slidesLink": "slides/lecture_19.pdf",
         "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=282d19ac-145e-4cc8-b1fc-b3d901596e7d"
       },
       {
         "id": 20,
-        "date": "2026-03-11",
+        "date": "2026-03-09",
         "title": "Policy Gradient Methods",
         "slidesLink": "slides/lecture_20.pdf",
         "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=420ceb3f-92fc-4e1b-81e9-b3d901596e97"
       },
       {
         "id": 21,
-        "date": "2026-03-13",
+        "date": "2026-03-11",
         "title": "PPO",
         "slidesLink": "slides/lecture_21.pdf",
         "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=49b5fd27-d8a5-4187-8d0d-b3d901596eaf"
       },
       {
         "id": 22,
-        "date": "2026-03-16",
+        "date": "2026-03-13",
         "title": "GRPO and LLMs",
         "slidesLink": "slides/lecture_22.pdf",
         "recordingLink": ""
       },
       {
         "id": 23,
-        "date": "2026-03-18",
+        "date": "2026-03-16",
         "title": "Self-Supervised Learning",
         "slidesLink": "slides/lecture_23.pdf",
         "recordingLink": ""
@@ -188,31 +188,31 @@ export const lectureGroups: LectureGroup[] = [
     "lectures": [
       {
         "id": 24,
-        "date": "2026-03-20",
+        "date": "2026-03-18",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
         "id": 25,
-        "date": "2026-03-30",
+        "date": "2026-03-20",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
         "id": 26,
-        "date": "2026-04-01",
+        "date": "2026-03-30",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
         "id": 27,
-        "date": "2026-04-03",
+        "date": "2026-04-01",
         "slidesLink": "",
         "recordingLink": ""
       },
       {
         "id": 28,
-        "date": "2026-04-06",
+        "date": "2026-04-03",
         "slidesLink": "",
         "recordingLink": ""
       },

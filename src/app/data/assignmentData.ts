@@ -65,17 +65,17 @@ export const assignments = [
   {
     id: 6,
     name: "Assignment 6: Generative Modeling",
-    outDate: "2026-04-1",
+    outDate: "2026-03-31",
     programming: {
       title: "Programming",
-      link: "",
+      link: "https://colab.research.google.com/drive/1sDZJMc3yEq6qLw0GrnFgc7PhfEZH4eLB#scrollTo=NY4Kd_E2OOnE",
       inDate: "2026-04-09",
     },
   },
   {
     id: 7,
     name: "Assignment 7: Reinforcement Learning",
-    outDate: "2026-04-08",
+    outDate: "2026-04-09",
     programming: {
       title: "Programming",
       link: "",

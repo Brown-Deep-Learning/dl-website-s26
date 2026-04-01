@@ -170,16 +170,16 @@ export const lectureGroups: LectureGroup[] = [
       {
         "id": 22,
         "date": "2026-03-13",
-        "title": "GRPO and LLMs",
+        "title": "GRPO and Applications",
         "slidesLink": "slides/lecture_22.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=49b5fd27-d8a5-4187-8d0d-b3d901596eaf"
       },
       {
         "id": 23,
         "date": "2026-03-16",
-        "title": "Self-Supervised Learning",
+        "title": "GRPO and Applications",
         "slidesLink": "slides/lecture_23.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=be9f4fff-fd31-4c3f-b524-b3d901596ec6"
       }
     ]
   },
@@ -189,20 +189,23 @@ export const lectureGroups: LectureGroup[] = [
       {
         "id": 24,
         "date": "2026-03-18",
+        "title": "Model Based RL",
         "slidesLink": "slides/lecture_24.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1be6fe06-b635-4a1d-89e0-b3d901596ede"
       },
       {
         "id": 25,
         "date": "2026-03-20",
+        "title": "Model-Based RL",
         "slidesLink": "slides/lecture_25.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2c4312a6-d278-471a-ae22-b3d901596ef6"
       },
       {
         "id": 26,
         "date": "2026-03-30",
+        "title": "The Dreamer Series",
         "slidesLink": "slides/lecture_26.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b70b30c9-1ea7-4950-8c6c-b3d901596f6d"
       },
       {
         "id": 27,

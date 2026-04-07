@@ -210,20 +210,23 @@ export const lectureGroups: LectureGroup[] = [
       {
         "id": 27,
         "date": "2026-04-01",
+        "title": "The Dreamer Series",
         "slidesLink": "slides/lecture_27.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5b00efa0-6bce-4ef7-a58d-b3d901596f8a"
       },
       {
         "id": 28,
         "date": "2026-04-03",
+        "title": "DINO",
         "slidesLink": "slides/lecture_28.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=74d4db53-747c-44d9-8fed-b3d901596fa2"
       },
       {
         "id": 29,
         "date": "2026-04-08",
+        "title": "LeWorld Model",
         "slidesLink": "slides/lecture_29.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5e59cf3d-a256-4e8c-a42e-b3d901596fbf"
       },
       {
         "id": 30,

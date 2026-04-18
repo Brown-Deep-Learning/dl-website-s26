@@ -75,11 +75,11 @@ export const assignments = [
   {
     id: 7,
     name: "Assignment 7: Reinforcement Learning",
-    outDate: "2026-04-09",
+    outDate: "2026-04-18",
     programming: {
       title: "Programming",
-      link: "",
-      inDate: "2026-04-23",
+      link: "https://hackmd.io/@browndls26/BylfEL-aWl",
+      inDate: "2026-05-08",
     },
   },
 ];

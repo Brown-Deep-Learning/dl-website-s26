@@ -231,26 +231,30 @@ export const lectureGroups: LectureGroup[] = [
       {
         "id": 30,
         "date": "2026-04-10",
+        "title": "Security and Adversarial Attacks",
         "slidesLink": "slides/lecture_30.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3764caee-19ea-47a1-a74f-b3d901596ff9"
       },
       {
         "id": 31,
         "date": "2026-04-13",
+        "title": "Fairness and Debiasing",
         "slidesLink": "slides/lecture_31.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c4a67332-b7dc-463b-be85-b3d90159701a"
       },
       {
         "id": 32,
         "date": "2026-04-15",
+        "title": "Long-Range Dependencies and SSMs",
         "slidesLink": "slides/lecture_32.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=12464e31-ea5f-42dd-bd95-b3d901597040"
       },
       {
         "id": 33,
         "date": "2026-04-17",
+        "title": "Loss Landscapes and Optimization",
         "slidesLink": "slides/lecture_33.pdf",
-        "recordingLink": ""
+        "recordingLink": "https://brown.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=733f0099-b78b-4f2d-9f23-b3d901597085"
       },
       {
         "id": 34,
